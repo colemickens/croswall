@@ -3,6 +3,14 @@ croswall
 
 Downloads the latest snapshot of Google's Chrome OS wallpapers.
 
-I claim no rights to anything. This just downloads a file, follows some links and downloads more files.
+Usage:
+
+```
+go get -u github.com/colemickens/croswall
+mkdir -p ~/Wallpapers/chromeos_wallpapers
+crosswall ~/Wallpapers/chromeos_wallpapers
+```
+
+This presumes you had $GOPATH/bin in your $PATH.
 
 MIT licensed
