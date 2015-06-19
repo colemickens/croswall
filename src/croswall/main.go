@@ -15,13 +15,13 @@ import (
 var downloadFlag = flag.String("downloadDir", "", "download location")
 var downloadDir string
 
-type Contents struct {
+type contents struct {
 	Key string
 }
 
-type ListBucketResult struct {
+type listBucketResult struct {
 	Name     string
-	Contents []Contents
+	Contents []contents
 }
 
 func init() {
@@ -51,10 +51,10 @@ func main() {
 		panic(err)
 	}
 
-	var res ListBucketResult
+	var res listBucketResult
 	xml.Unmarshal(contents, &res)
 
-	for _, r := range res.Contents {
+	for _, r := range res.contents {
 		if strings.Contains(r.Key, "high_resolution") {
 			download(r.Key)
 		}
