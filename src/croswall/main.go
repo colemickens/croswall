@@ -65,7 +65,7 @@ func download(key string) {
 	filename := filepath.Join(downloadDir, key)
 
 	if _, err := os.Stat(filename); err == nil {
-		log.Println("Skipping %s as it exists: %s", key, filename)
+		log.Printf("Skipping %s as it exists: %s\n", key, filename)
 		return
 	}
 
