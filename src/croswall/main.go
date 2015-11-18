@@ -54,7 +54,7 @@ func main() {
 	var res listBucketResult
 	xml.Unmarshal(contents, &res)
 
-	for _, r := range res.contents {
+	for _, r := range res.Contents {
 		if strings.Contains(r.Key, "high_resolution") {
 			download(r.Key)
 		}
